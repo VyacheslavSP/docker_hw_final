@@ -1,0 +1,160 @@
+gb@mygb:~$ sudo su
+[sudo] password for gb:
+root@mygb:/home/gb# mkdir comp
+root@mygb:/home/gb# cd comp/
+root@mygb:/home/gb/comp# docker-compose version
+Command 'docker-compose' not found, but can be installed with:
+snap install docker          # version 20.10.24, or
+apt  install docker-compose  # version 1.29.2-1
+See 'snap info docker' for additional versions.
+root@mygb:/home/gb/comp# snap install docker
+docker 20.10.24 from Canonical✓ installed
+root@mygb:/home/gb/comp# docker-compose version
+Docker Compose version v2.17.2
+root@mygb:/home/gb/comp# nano compose.yaml
+root@mygb:/home/gb/comp# root@mygb:/home/gb/comp# docker-compose up
+(root) Additional property srvises is not allowed
+root@mygb:/home/gb/comp# docker-compose version
+Docker Compose version v2.17.2
+root@mygb:/home/gb/comp# ls
+compose.yaml
+root@mygb:/home/gb/comp# docker-compose up
+(root) Additional property srvises is not allowed
+root@mygb:/home/gb/comp# nano compose.yaml
+root@mygb:/home/gb/comp# root@mygb:/home/gb/comp# docker-compose up
+(root) Additional property servises is not allowed
+root@mygb:/home/gb/comp# nano compose.yaml
+root@mygb:/home/gb/comp# root@mygb:/home/gb/comp# docker-compose up
+[+] Running 17/17
+ ✔ adminer 7 layers [⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                              68.2s
+   ✔ 9a9e034800a1 Pull complete                                                                                   59.8s
+   ✔ a93e89405fb5 Pull complete                                                                                   62.7s
+   ✔ 0e87fd288de6 Pull complete                                                                                   62.8s
+   ✔ a71b1e29bbc6 Pull complete                                                                                   63.1s
+   ✔ cba31560d427 Pull complete                                                                                   63.2s
+   ✔ c9a622b0a973 Pull complete                                                                                   63.5s
+   ✔ e93b37eef6ad Pull complete                                                                                   63.6s
+ ✔ db 8 layers [⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                                 127.2s
+   ✔ 10ac4908093d Pull complete                                                                                   45.2s
+   ✔ 44779101e748 Pull complete                                                                                   45.4s
+   ✔ a721db3e3f3d Pull complete                                                                                   46.2s
+   ✔ 1850a929b84a Pull complete                                                                                   46.4s
+   ✔ 397a918c7da3 Pull complete                                                                                   46.5s
+   ✔ 806be17e856d Pull complete                                                                                  121.6s
+   ✔ 634de6c90876 Pull complete                                                                                  122.1s
+   ✔ cd00854cfb1a Pull complete                                                                                  122.3s
+[+] Running 3/3
+ ✔ Network comp_default      Created                                                                               0.2s
+ ✔ Container comp-db-1       Created                                                                               0.5s
+ ✔ Container comp-adminer-1  Created                                                                               0.5s
+Attaching to comp-adminer-1, comp-db-1
+comp-db-1       | 2023-07-31 11:49:21+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.10.2+maria~ubu2204 started.
+comp-adminer-1  | [Mon Jul 31 11:49:21 2023] PHP 7.4.33 Development Server (http://[::]:8080) started
+comp-db-1       | 2023-07-31 11:49:21+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+comp-db-1       | 2023-07-31 11:49:21+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.10.2+maria~ubu2204 started.
+comp-db-1       | 2023-07-31 11:49:21+00:00 [Note] [Entrypoint]: Initializing database files
+comp-db-1       |
+comp-db-1       |
+comp-db-1       | PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+comp-db-1       | To do so, start the server, then issue the following command:
+comp-db-1       |
+comp-db-1       | '/usr/bin/mysql_secure_installation'
+comp-db-1       |
+comp-db-1       | which will also give you the option of removing the test
+comp-db-1       | databases and anonymous user created by default.  This is
+comp-db-1       | strongly recommended for production servers.
+comp-db-1       |
+comp-db-1       | See the MariaDB Knowledgebase at https://mariadb.com/kb
+comp-db-1       |
+comp-db-1       | Please report any problems at https://mariadb.org/jira
+comp-db-1       |
+comp-db-1       | The latest information about MariaDB is available at https://mariadb.org/.
+comp-db-1       |
+comp-db-1       | Consider joining MariaDB's strong and vibrant community:
+comp-db-1       | https://mariadb.org/get-involved/
+comp-db-1       |
+comp-db-1       | 2023-07-31 11:49:25+00:00 [Note] [Entrypoint]: Database files initialized
+comp-db-1       | 2023-07-31 11:49:25+00:00 [Note] [Entrypoint]: Starting temporary server
+comp-db-1       | 2023-07-31 11:49:25+00:00 [Note] [Entrypoint]: Waiting for server startup
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] mariadbd (server 10.10.2-MariaDB-1:10.10.2+maria~ubu2204) starting as process 99 ...
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Number of transaction pools: 1
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Using liburing
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Completed initialization of buffer pool
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: 128 rollback segments are active.
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] InnoDB: log sequence number 46590; transaction id 14
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] Plugin 'FEEDBACK' is disabled.
+comp-db-1       | 2023-07-31 11:49:25 0 [Warning] 'user' entry 'root@0334726b4592' ignored in --skip-name-resolve mode.
+comp-db-1       | 2023-07-31 11:49:25 0 [Warning] 'proxies_priv' entry '@% root@0334726b4592' ignored in --skip-name-resolve mode.
+comp-db-1       | 2023-07-31 11:49:25 0 [Note] mariadbd: ready for connections.
+comp-db-1       | Version: '10.10.2-MariaDB-1:10.10.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 0  mariadb.org binary distribution
+comp-db-1       | 2023-07-31 11:49:26+00:00 [Note] [Entrypoint]: Temporary server started.
+comp-db-1       | 2023-07-31 11:49:32+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+comp-db-1       |
+comp-db-1       | 2023-07-31 11:49:32+00:00 [Note] [Entrypoint]: Stopping temporary server
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] mariadbd (initiated by: unknown): Normal shutdown
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: FTS optimize thread exiting.
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: Starting shutdown...
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: Buffer pool(s) dump completed at 230731 11:49:32
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] InnoDB: Shutdown completed; log sequence number 46590; transaction id 15
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] mariadbd: Shutdown complete
+comp-db-1       |
+comp-db-1       | 2023-07-31 11:49:32+00:00 [Note] [Entrypoint]: Temporary server stopped
+comp-db-1       |
+comp-db-1       | 2023-07-31 11:49:32+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+comp-db-1       |
+comp-db-1       | 2023-07-31 11:49:32 0 [Note] mariadbd (server 10.10.2-MariaDB-1:10.10.2+maria~ubu2204) starting as process 1 ...
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Number of transaction pools: 1
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Using crc32 + pclmulqdq instructions
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] mariadbd: O_TMPFILE is not supported on /tmp (disabling future attempts)
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Using liburing
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Initializing buffer pool, total size = 128.000MiB, chunk size = 2.000MiB
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Completed initialization of buffer pool
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: File system buffers for log disabled (block size=512 bytes)
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: 128 rollback segments are active.
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Setting file './ibtmp1' size to 12.000MiB. Physically writing the file full; Please wait ...
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: File './ibtmp1' size is now 12.000MiB.
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: log sequence number 46590; transaction id 14
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] Plugin 'FEEDBACK' is disabled.
+comp-db-1       | 2023-07-31 11:49:33 0 [Warning] You need to use --log-bin to make --expire-logs-days or --binlog-expire-logs-seconds work.
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] InnoDB: Buffer pool(s) load completed at 230731 11:49:33
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] Server socket created on IP: '0.0.0.0'.
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] Server socket created on IP: '::'.
+comp-db-1       | 2023-07-31 11:49:33 0 [Note] mariadbd: ready for connections.
+comp-db-1       | Version: '10.10.2-MariaDB-1:10.10.2+maria~ubu2204'  socket: '/run/mysqld/mysqld.sock'  port: 3306  mariadb.org binary distribution
+[+] Running 2/2
+ ✔ Container comp-adminer-1  Stopped                                                                               0.6s
+ ✔ Container comp-db-1       Stopped                                                                               0.7s
+canceled
+root@mygb:/home/gb/comp# cat compose.yaml
+version: '3.9'
+
+services:
+  db:
+    image: mariadb:10.10.2
+    restart:  always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+
+  adminer:
+    image:  adminer:4.8.1
+    restart: always
+    ports:
+      -  6080:8080
+root@mygb:/home/gb/comp# docker ps -a
+CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS              PORTS                                       NAMES
+0334726b4592   mariadb:10.10.2   "docker-entrypoint.s…"   8 minutes ago   Up About a minute   3306/tcp                                    comp-db-1
+b8604f75ca36   adminer:4.8.1     "entrypoint.sh php -…"   8 minutes ago   Up About a minute   0.0.0.0:6080->8080/tcp, :::6080->8080/tcp   comp-adminer-1
+root@mygb:/home/gb/comp#
+
+Выводы зафиксированы-Docker-Compose инструмент для лжглвоеменного управления несколькими контейнерами что позволяет проще создавать сервисы со сложной архитектурой, чем просто Docker, который управляет 1 контейнером
